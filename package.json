@@ -1,0 +1,31 @@
+{
+	"name": "api-login-sq",
+	"version": "0.0.0",
+	"description": "Api para la generacion de poster",
+	"author": "JesusACD",
+	"license": "MIT",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "nodemon app.js",
+		"start": "node app.js"
+	},
+	"dependencies": {
+		"@koa/cors": "^3.1.0",
+		"@koa/router": "^10.1.1",
+		"axios": "^0.26.1",
+		"form-data": "^4.0.0",
+		"joi": "^17.6.0",
+		"koa": "^2.13.4",
+		"koa-bodyparser": "^4.3.0",
+		"koa-compose": "^4.1.0",
+		"koa-joi-validate-middleware": "^1.1.7",
+		"mime-types": "^2.1.35",
+		"mysql2": "^2.3.3",
+		"node-fetch": "^2.6.7",
+		"sequelize": "^6.21.4"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	}
+}
