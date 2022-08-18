@@ -21,6 +21,7 @@ class Users {
 		// this.getUser('/:id');
 		this.getUsers('/');
 		this.postCreate('/');
+		this.getUser('/:username');
 		// this.postCreateUser('/crear');
 		// this.putUpdateUser('/:id');
 	}
@@ -53,6 +54,24 @@ class Users {
 
 				req.response.status = 200;
 				req.body = users;
+			} catch (error) {
+				req.response.status = 500;
+				req.body = { errors: 'Bad request', error };
+			}
+		});
+	}
+
+	getUser(route) {
+		this.router.get(route, async (req) => {
+			const { username } = req.request.params;
+			try {
+				const user = await User.findOne({ where: { username } });
+				if (!user) {
+					return res.status(404).send('User not found');
+				}
+
+				req.response.status = 200;
+				req.body = user;
 			} catch (error) {
 				req.response.status = 500;
 				req.body = { errors: 'Bad request', error };
