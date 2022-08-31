@@ -24,11 +24,24 @@ const User = db.define(
 		},
 		id_paste: {
 			type: DataTypes.TINYINT
+		},
+		ouo: {
+			type: DataTypes.STRING
+		},
+		shrinkme: {
+			type: DataTypes.STRING
+		},
+		exe: {
+			type: DataTypes.STRING
+		},
+		cpmlink: {
+			type: DataTypes.STRING
 		}
 	},
 	{
 		// Other model options go here
 	}
 );
+
 
 module.exports = User;

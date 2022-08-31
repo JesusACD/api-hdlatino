@@ -70,11 +70,7 @@ class Users {
 			try {
 				const users = await User.upsert({
 					id,
-					username,
-					password,
-					alias,
-					id_wordpress,
-					id_paste
+					...req.request.body
 				});
 				if (!users) {
 					return req.status(404).send('User not found');
